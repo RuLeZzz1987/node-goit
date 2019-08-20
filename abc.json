@@ -1,0 +1,15 @@
+
+
+
+
+{
+  "first-name": "Ave",
+  "last-name": "Ing",
+  "address": {
+    "street": "FF",
+    "state": "21",
+    "city": "Kv",
+    "buildingNumber": 123.23,
+    "isMain": null
+  }
+}
