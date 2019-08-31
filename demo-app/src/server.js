@@ -1,6 +1,7 @@
 
 
 
+require('./models');
 require('./core/express-promise');
 const express = require('express');
 const morgan = require('morgan');
@@ -9,6 +10,15 @@ const bodyParser = require('body-parser');
 const {ValidationError} = require('./core/errors');
 
 const app = express();
+
+app.set('view engine', 'ejs');
+app.set('views', './views');
+app.use('/static', express.static('static'));
+
+app.use('/index', (req, res) => {
+  res.render('index', {name: req.headers['x-user-name']});
+});
+
 
 app.use(morgan('combined'));
 app.use(bodyParser.urlencoded({ extended: false }));
